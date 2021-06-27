@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "create-react-app": "^4.0.3",
+    "global": "^4.4.0",
+    "keyframe": "^2.1.0",
+    "react-app": "^1.1.2"
+  }
+}
