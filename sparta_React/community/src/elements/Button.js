@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Button = (props) => {
-  const {text, children, _onClick, margin, width, padding, mini} = props
+  const {text, is_float, children, _onClick, margin, width, padding, mini} = props
 
   const styles = {
     margin:margin,
@@ -13,9 +13,17 @@ const Button = (props) => {
   if(mini) {
     return(
       <React.Fragment>
-        <MiniBtn onClick={_onClick}>{text ? text: children}</MiniBtn>
+        <MiniBtn {...styles} onClick={_onClick}>{text ? text: children}</MiniBtn>
       </React.Fragment>
     )
+  }
+
+  if (is_float) {
+    return (
+      <React.Fragment>
+        <FloatButton onClick={_onClick}>{text? text : children}</FloatButton>
+      </React.Fragment>
+    );
   }
 
   return (
@@ -23,10 +31,12 @@ const Button = (props) => {
       <Btn {...styles} onClick={_onClick}>{text ? text: children}</Btn>
     </React.Fragment>
   );
+
 }
 
 Button.defaultProps = {
   text: false,
+  is_float: false,
   children:null,
   _onClick: () => {},
   margin: false,
@@ -47,7 +57,7 @@ const Btn = styled.button`
 `;
 
 const MiniBtn = styled.button`
-  width: 50px;
+  width: ${(props) => props.width};
   height: 30px;
   background-color: grey;
   color: white;
@@ -56,6 +66,24 @@ const MiniBtn = styled.button`
   padding: 12px 0px;
   box-sizing: border-box;
   border: none;
+  ${(props) => (props.margin ? `margin: ${props.margin};` : "")}
+`;
+
+const FloatButton = styled.button`
+  width: 40px;
+  height: 40px;
+  background-color: gray;
+  color: #ffffff;
+  box-sizing: border-box;
+  font-size: 36px;
+  font-weight: 800;
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  text-align: center;
+  vertical-align: middle;
+  border: none;
+  border-radius: 50px;
 `;
 
 export default Button;

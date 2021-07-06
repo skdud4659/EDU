@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Grid = (props) => {
-  const {is_between, width, padding, margin, bg, children} = props;
+  const {is_between, width, padding, margin, bg, children, _onClick} = props;
 
   const styles = {
     is_between:is_between,
@@ -14,7 +14,7 @@ const Grid = (props) => {
 
   return (
     <React.Fragment>
-      <GridBox {...styles}>{children}</GridBox>
+      <GridBox {...styles} onClick={_onClick}>{children}</GridBox>
     </React.Fragment>
   );
 }
@@ -26,11 +26,12 @@ Grid.defaultProps = {
   padding: false,
   margin: false,
   bg: false,
+  _onClick: () => {}
 };
 
 const GridBox = styled.div`
   width: ${(props) => props.width};
-  height: 100%auto;
+  height: 100%;
   box-sizing: border-box;
   ${(props) => props.padding ? `padding: ${props.padding}` : ''}
   ${(props) => props.margin ? `margin: ${props.margin}` : ''}
