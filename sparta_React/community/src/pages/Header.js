@@ -27,7 +27,13 @@ const Header = React.memo((props) => {
               </Grid>
               <Grid is_between width='auto'>
                 <Btn mini width="80px" text="내 정보"/>
-                <Btn mini width="80px" text="알림"/>
+                <Btn
+                  mini
+                  width="80px"
+                  text="알림"
+                  _onClick={() => {
+                    history.push('/noti')
+                  }}/>
                 <Btn
                   mini
                   width="80px"

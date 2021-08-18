@@ -9,14 +9,15 @@ const Post = (props) => {
   return (
     <React.Fragment>
         <Grid >
-          <Grid padding="0px 16px;" is_between >
+          <Grid padding="0px 16px;" is_between>
             <Grid is_between width="auto;">
               <Image shape="circle" src={props.src}/>
               <Text bold>{props.user_info.user_name}</Text>
             </Grid>
             <Grid is_between width="auto;">
               <Text margin="0px 5px 0px 0px;">{props.insert_dt}</Text>
-              <Btn mini width="50px" text='수정'></Btn>
+              {props.is_me && (<Btn width="auto" padding="4px" margin="4px" _onClick={() => {
+                history.push(`/write/${props.id}`)}}>수정</Btn>)}
             </Grid>
           </Grid>
         </Grid>

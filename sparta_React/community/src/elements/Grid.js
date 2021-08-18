@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Grid = (props) => {
-  const {is_between, width, padding, margin, bg, children, _onClick} = props;
+  const {is_between, width, padding,overflow, margin, bg, children, _onClick} = props;
 
   const styles = {
     is_between:is_between,
@@ -10,6 +10,7 @@ const Grid = (props) => {
     margin: margin,
     padding: padding,
     bg: bg,
+    overflow:overflow
   };
 
   return (
@@ -26,7 +27,8 @@ Grid.defaultProps = {
   padding: false,
   margin: false,
   bg: false,
-  _onClick: () => {}
+  _onClick: () => {},
+  overflow: false,
 };
 
 const GridBox = styled.div`
@@ -38,6 +40,7 @@ const GridBox = styled.div`
   ${(props) => props.bg ? `background-color: ${props.bg}` : ''}
   ${(props) => props.is_between ?
   `display: flex; align-items:center; justify-content:space-between;` : ''}
+  ${(props) => props.overflow ? `overflow-y: scroll;` : ''}
 `;
 
 export default Grid;

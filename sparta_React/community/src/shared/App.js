@@ -16,6 +16,7 @@ import Permit from './Permit';
 import {Btn, Grid} from '../elements';
 import Write from '../pages/Write';
 import Detail from '../pages/Detail';
+import Noti from '../pages/Noti';
 
 function App() {
   const dispatch = useDispatch();
@@ -40,10 +41,11 @@ function App() {
             <Route path='/login' exact component={Login}/>
             <Route path='/signup' exact component={SignUp}/>
             <Route path='/write' exact component={Write}/>
+            <Route path='/write/:id' exact component={Write}/>
             <Route path='/detail' exact component={Detail}/>
+            <Route path='/noti' exact component={Noti}/>
         </ConnectedRouter>
       </Grid>
-      
     </div>
   );
 }
