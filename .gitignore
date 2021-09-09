@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 node_modules/
 .expo/
 npm-debug.*
@@ -11,3 +12,17 @@ web-build/
 
 # macOS
 .DS_Store
+=======
+
+.DS_Store
+venv/bin/activate
+*.csh
+*.fish
+*.ps1
+venv/bin/pip
+venv/bin/pip3
+*.8
+venv/bin/python
+venv/bin/python3
+*.cfg
+>>>>>>> 6bc8c525f2e4758ee53c60a194496e2201118c07
