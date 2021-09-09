@@ -16,6 +16,7 @@ console.log(solution([[1,2],[2,3]],[[3,4],[5,6]]))
 // [[4,6],[7,9]]
 
 // 핸드폰 번호 가리기
+// 풀이1 >> 반복된 for문으로 시간복잡도가 좋지 않을듯함..!
 // function phoneSolution(phone_number) {
 //   var answer = '';
 //   for(let i=0; i<phone_number.length-4; i++) {
@@ -26,7 +27,8 @@ console.log(solution([[1,2],[2,3]],[[3,4],[5,6]]))
 //   }
 //   return answer;
 // }
-// 풀이2
+
+// 개선 풀이2
 function phone(phone_number) {
   var answer = "*".repeat(phone_number.length-4) + phone_number.slice(-4)
   return answer;
