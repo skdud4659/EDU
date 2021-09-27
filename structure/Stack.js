@@ -43,7 +43,7 @@ class Stack {
 
   // 남은 요소가 있는지 확인 > boolean
   empty() {
-    return this.arr.length === 0 ? true : false
+    return this.arr.length === 0
   }
 }
 

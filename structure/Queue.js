@@ -24,7 +24,7 @@ class Queue {
   }
 
   empty() {
-    return this.arr.length === 0 ? true : false
+    return this.arr.length === 0
   }
 }
 
