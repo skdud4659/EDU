@@ -15,10 +15,12 @@ const d = looselyTyped.a.b.c.d;
 // 타입 안정성을 해칠 수 있다.
 
 function leakingAny(obj: any) {
-  const a:number = obj.num;
+  const a = obj.num;
+  // 누수를 막기 위해서는 타입 지정
+  // const a:number = obj.num;
   const b = a+1;
   return b
 }
 
 const c = leakingAny({num:0});
-c.indexOf('0')
+c.indexOf('0');
