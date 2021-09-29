@@ -12,3 +12,7 @@ function hello(c) {
 hello(39);
 // 매개변수 c의 타입을 number로 주었기 때문에 문자인 hello는 오류
 hello('hello');
+
+
+const arrA = [1,2,[3,4,5],6] // [ 1, 2, 3, 4, 5, 6 ]
+const arrB = [1,2,[3,4,[5,6,7],8]] // [ 1, 2, 3, 4, [ 5, 6, 7 ], 8 ]
