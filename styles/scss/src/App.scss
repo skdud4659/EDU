@@ -1,0 +1,36 @@
+// scss(css 전처리기)
+// sass : 유효범위를 들여쓰기로 구분 / scss : 유효범위를 {}로 구분
+
+// 변수 지정(전역으로 관리하기 좋음)
+$font-color: red;
+
+.text {
+  color: $font-color;
+}
+
+// width, height같은 경우 연산 가능
+// width: 300px/ 960px * 100%; 
+
+// 선택자와 속성 재활용
+// 사이트 전체에서 재사용하려는 css 선언 그룹을 만들 수 있다.
+// 선언 : @mixin, 호출 : @include
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+.box { @include transform(rotate(30deg)); }
+
+// 만약, 다른 페이지로 scss를 작성했다면 @use로 import해서 다른 파일에서 사용할 수 있다.
+
+// 확장,상속
+// %~ 작성 css를 @extend로 확장해서 사용할 수 있다.
+%message-shared {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.message {
+  @extend %message-shared;
+}
