@@ -2,9 +2,29 @@
 // sass : 유효범위를 들여쓰기로 구분 / scss : 유효범위를 {}로 구분
 
 // 변수 지정(전역으로 관리하기 좋음)
-$font-color: red;
+$font-color: gray;
 
+// em과 rem 구분
+// 최상위
+body {
+  font-size: 16px;
+}
+
+// 특정 요소(div)
+.wrap {
+  font-size: 18px;
+  // padding-left: 2rem; // 32px
+  padding-left: 2em; // 36px
+
+}
+
+// 적용 폰트
 .text {
+  // rem : 페이지 최상위 요소를 기준으로 잡힘 > 160px
+  font-size: 4rem;
+
+  // em : 특정 요소(부모)를 기준으로 잡힘 > 180px
+  // font-size: 10em;
   color: $font-color;
 }
 
