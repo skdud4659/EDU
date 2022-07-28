@@ -1,0 +1,7 @@
+.App {
+  text-align: center;
+}
+#scroll-section-0{height:100vh !important;}
+#scroll-section-1{height:700px;background:blanchedalmond;padding:50px}
+#scroll-section-1-inner{width:1200px;height:550px;margin-right:auto;margin-left:auto;background:cadetblue;padding:50px}
+#scroll-section-2{height:700px;padding:50px}
